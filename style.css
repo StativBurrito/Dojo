@@ -53,6 +53,10 @@ body {
   transition: color 0.2s ease;
 }
 
+.sidebar__nav a.is-active {
+  color: #c62828;
+}
+
 .sidebar__nav a:hover,
 .sidebar__nav a:focus {
   color: #c62828;
@@ -83,6 +87,47 @@ body {
 .content p {
   max-width: 640px;
   line-height: 1.6;
+}
+
+.news {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.news h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 4px;
+}
+
+.news__lead {
+  margin: 0;
+  font-size: 1.08rem;
+}
+
+.news__item h3 {
+  margin: 0 0 6px;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.news__item p {
+  margin: 0;
+}
+
+.news a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+.news a:hover,
+.news a:focus {
+  color: #c62828;
 }
 
 .disciplines {
