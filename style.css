@@ -130,6 +130,143 @@ body {
   color: #c62828;
 }
 
+.board {
+  max-width: 880px;
+  margin: 0 auto;
+}
+
+.board h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 32px;
+}
+
+.board__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(180px, 1fr));
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    ". treasurer . chairman"
+    "leader . deputy .";
+  gap: 40px 60px;
+  align-items: end;
+  justify-content: center;
+}
+
+.board__member {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.board__avatar {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.board__avatar img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.board__role {
+  font-size: 1.05rem;
+  margin: 0;
+}
+
+.board__history {
+  margin: 0;
+}
+
+.board__member a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+.board__member a:hover,
+.board__member a:focus {
+  color: #c62828;
+}
+
+.board__member--dojo {
+  grid-area: leader;
+  margin-top: 30px;
+}
+
+.board__member--max {
+  grid-area: deputy;
+  margin-top: 30px;
+}
+
+.board__member--friedemann {
+  grid-area: treasurer;
+  margin-bottom: 30px;
+}
+
+.board__member--peter {
+  grid-area: chairman;
+  margin-bottom: 30px;
+}
+
+@media (max-width: 1200px) {
+  .board__grid {
+    grid-template-columns: repeat(2, minmax(220px, 1fr));
+    grid-template-areas:
+      "treasurer chairman"
+      "leader deputy";
+    justify-items: center;
+    gap: 30px 40px;
+  }
+
+  .board__member--friedemann {
+    margin-bottom: 50px;
+  }
+
+  .board__member--peter {
+    margin-bottom: 100px;
+  }
+
+  .board__member--dojo {
+    margin-top: 50px;
+  }
+
+  .board__member--max {
+    margin-top: 50px;
+  }
+}
+
+@media (max-width: 900px) {
+  .board__grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .board__avatar {
+    width: 160px;
+    height: 160px;
+  }
+
+  .board__member--dojo,
+  .board__member--max,
+  .board__member--friedemann,
+  .board__member--peter {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
 .disciplines {
   display: grid;
   grid-template-columns: repeat(3, minmax(160px, 220px));
