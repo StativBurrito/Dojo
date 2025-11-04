@@ -1,4 +1,6 @@
 @charset "UTF-8";
+
+/* Global base styling: background grid, typography */
 body {
   margin: 0;
   font-family: "Helvetica Neue", Arial, sans-serif;
@@ -8,6 +10,7 @@ body {
   background-size: 28px 28px;
 }
 
+/* Permanent left sidebar container */
 .sidebar {
   position: fixed;
   top: 0;
@@ -24,6 +27,7 @@ body {
   border-right: 2px solid #111;
 }
 
+/* Club name lockup at top of sidebar */
 .sidebar__brand {
   font-weight: 700;
   font-size: 1.15rem;
@@ -36,6 +40,7 @@ body {
   display: inline-block;
 }
 
+/* Sidebar navigation list layout */
 .sidebar__nav ul {
   list-style: none;
   padding: 0;
@@ -57,6 +62,7 @@ body {
   color: #c62828;
 }
 
+/* Hover/focus highlight for sidebar links */
 .sidebar__nav a:hover,
 .sidebar__nav a:focus {
   color: #c62828;
@@ -66,12 +72,14 @@ body {
   height: 18px;
 }
 
+/* Right-hand main content offset and padding */
 .content {
   margin-left: 260px;
   padding: 64px 80px;
   box-sizing: border-box;
 }
 
+/* Hero headline section shared across pages */
 .hero {
   text-align: center;
   margin-bottom: 48px;
@@ -89,6 +97,7 @@ body {
   line-height: 1.6;
 }
 
+/* Aktuelles page layout */
 .news {
   max-width: 720px;
   margin: 0 auto;
@@ -118,6 +127,7 @@ body {
   margin: 0;
 }
 
+/* Styled inline links within news copy */
 .news a {
   color: inherit;
   text-decoration: underline;
@@ -130,9 +140,11 @@ body {
   color: #c62828;
 }
 
+/* Vereinsleitung page wrapper */
 .board {
-  max-width: 880px;
-  margin: 0 auto;
+  width: 100%;
+  max-width: none;
+  margin: 0;
 }
 
 .board h2 {
@@ -141,12 +153,13 @@ body {
   margin-bottom: 32px;
 }
 
+/* Card grid for board members (desktop: 4 across) */
 .board__grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(200px, 1fr));
-  gap: 40px;
+  gap: 48px;
   align-items: start;
-  justify-items: center;
+  justify-items: stretch;
 }
 
 .board__member {
@@ -154,8 +167,11 @@ body {
   display: flex;
   flex-direction: column;
   gap: 12px;
+  width: 100%;
+  align-items: center;
 }
 
+/* Square placeholder for member portraits */
 .board__avatar {
   width: 200px;
   height: 200px;
@@ -196,6 +212,7 @@ body {
   color: #c62828;
 }
 
+/* Zero out per-member offsets (was used for staggering) */
 .board__member--dojo,
 .board__member--max,
 .board__member--friedemann,
@@ -203,13 +220,16 @@ body {
   margin: 0;
 }
 
-@media (max-width: 1200px) {
+/* Tablet: board grid collapses to two columns */
+/* Tablet: board grid collapses to two columns */
+@media (max-width: 1400px) {
   .board__grid {
     grid-template-columns: repeat(2, minmax(220px, 1fr));
     gap: 32px;
   }
 }
 
+/* Mobile: single-column board with smaller avatars */
 @media (max-width: 900px) {
   .board__grid {
     grid-template-columns: 1fr;
@@ -230,6 +250,7 @@ body {
   }
 }
 
+/* Homepage discipline grid with cross layout */
 .disciplines {
   display: grid;
   grid-template-columns: repeat(3, minmax(160px, 220px));
@@ -273,6 +294,7 @@ body {
   object-fit: contain;
 }
 
+/* Manual offsets imitate provided mockup */
 .discipline--karate {
   grid-area: karate;
   margin-top: -16px;
@@ -293,6 +315,7 @@ body {
   margin-top: -84px;
 }
 
+/* Tablet adjustments for discipline grid */
 @media (max-width: 1200px) {
   .disciplines {
     grid-template-columns: repeat(3, minmax(130px, 180px));
@@ -306,6 +329,7 @@ body {
   }
 }
 
+/* Mobile: stack disciplines vertically */
 @media (max-width: 900px) {
   .disciplines {
     grid-template-columns: 1fr;
