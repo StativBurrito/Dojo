@@ -143,14 +143,10 @@ body {
 
 .board__grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(180px, 1fr));
-  grid-template-rows: auto auto;
-  grid-template-areas:
-    ". treasurer . chairman"
-    "leader . deputy .";
-  gap: 40px 60px;
-  align-items: end;
-  justify-content: center;
+  grid-template-columns: repeat(4, minmax(200px, 1fr));
+  gap: 40px;
+  align-items: start;
+  justify-items: center;
 }
 
 .board__member {
@@ -200,50 +196,17 @@ body {
   color: #c62828;
 }
 
-.board__member--dojo {
-  grid-area: leader;
-  margin-top: 30px;
-}
-
-.board__member--max {
-  grid-area: deputy;
-  margin-top: 30px;
-}
-
-.board__member--friedemann {
-  grid-area: treasurer;
-  margin-bottom: 30px;
-}
-
+.board__member--dojo,
+.board__member--max,
+.board__member--friedemann,
 .board__member--peter {
-  grid-area: chairman;
-  margin-bottom: 30px;
+  margin: 0;
 }
 
 @media (max-width: 1200px) {
   .board__grid {
     grid-template-columns: repeat(2, minmax(220px, 1fr));
-    grid-template-areas:
-      "treasurer chairman"
-      "leader deputy";
-    justify-items: center;
-    gap: 30px 40px;
-  }
-
-  .board__member--friedemann {
-    margin-bottom: 50px;
-  }
-
-  .board__member--peter {
-    margin-bottom: 100px;
-  }
-
-  .board__member--dojo {
-    margin-top: 50px;
-  }
-
-  .board__member--max {
-    margin-top: 50px;
+    gap: 32px;
   }
 }
 
