@@ -1,0 +1,193 @@
+@charset "UTF-8";
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #222;
+  background-image: radial-gradient(#d0d0d0 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 260px;
+  height: 100vh;
+  padding: 32px 28px;
+  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.95);
+  color: #111;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  border-right: 2px solid #111;
+}
+
+.sidebar__brand {
+  font-weight: 700;
+  font-size: 1.15rem;
+  line-height: 1.35;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.sidebar__title {
+  display: inline-block;
+}
+
+.sidebar__nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 14px;
+}
+
+.sidebar__nav a {
+  text-decoration: none;
+  color: #0b0b0b;
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: 0.01em;
+  transition: color 0.2s ease;
+}
+
+.sidebar__nav a:hover,
+.sidebar__nav a:focus {
+  color: #c62828;
+}
+
+.sidebar__spacer {
+  height: 18px;
+}
+
+.content {
+  margin-left: 260px;
+  padding: 64px 80px;
+  box-sizing: border-box;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.content h1 {
+  margin-top: 0;
+  font-size: 2.8rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+}
+
+.content p {
+  max-width: 640px;
+  line-height: 1.6;
+}
+
+.disciplines {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(160px, 220px));
+  grid-template-rows: repeat(3, auto);
+  grid-template-areas:
+    ". karate ."
+    "taiji . tsyr"
+    ". kickboxen .";
+  row-gap: 0px;
+  column-gap: 48px;
+  justify-items: center;
+  justify-content: center;
+  align-content: center;
+  margin: 0 auto;
+  max-width: 720px;
+  align-items: center;
+  text-align: center;
+}
+
+.discipline h2 {
+  margin-bottom: 8px;
+  font-size: 1.6rem;
+  font-weight: 800;
+}
+
+.discipline__logo {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 4px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+}
+
+.discipline__logo img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.discipline--karate {
+  grid-area: karate;
+  margin-top: -16px;
+}
+
+.discipline--taiji {
+  grid-area: taiji;
+  margin-top: -84px;
+}
+
+.discipline--tsyr {
+  grid-area: tsyr;
+  margin-top: -84px;
+}
+
+.discipline--kickboxen {
+  grid-area: kickboxen;
+  margin-top: -84px;
+}
+
+@media (max-width: 1200px) {
+  .disciplines {
+    grid-template-columns: repeat(3, minmax(130px, 180px));
+    gap: 16px 40px;
+    max-width: 580px;
+  }
+
+  .discipline__logo {
+    width: 160px;
+    height: 160px;
+  }
+}
+
+@media (max-width: 900px) {
+  .disciplines {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: none;
+    gap: 20px;
+    max-width: 360px;
+  }
+
+  .discipline {
+    justify-self: center;
+    max-width: 280px;
+    width: 100%;
+    margin: 0 auto;
+    grid-area: auto;
+  }
+
+  .discipline__logo {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+  }
+
+  .discipline--karate,
+  .discipline--taiji,
+  .discipline--tsyr,
+  .discipline--kickboxen {
+    margin-top: 0;
+  }
+}
